@@ -47,8 +47,6 @@ def play(word):
                 # Transform the word in a list
                 word_list = list(word_to_be_discovered)
 
-                print(word_to_be_discovered)
-
                 # Verification where the letter is located in the word
                 indexes = [i for i, letter in enumerate(word) if letter == attempt]
                 for index in indexes:
@@ -56,11 +54,20 @@ def play(word):
 
                 word_to_be_discovered = "".join(word_list)
 
-                print(word_to_be_discovered)
+                if "_" not in word_to_be_discovered:
+                    guessed = True
         # Invalid attempt
         else:
             print("Invalid attempt. Try again!")
-
+        # Display the game status
+        print(display_hangman(attempts))
+        print(word_to_be_discovered)
+    
+    # End the game if the player discovered the word or if the attempts is 0
+    if guessed:
+        print("Congratulations! You discovered the word")
+    else:
+        print("You have no more attempts to guess the word. The word was: %s" % word)
 
 # Game status (body)
 
