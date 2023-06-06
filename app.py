@@ -8,7 +8,7 @@ def select_word():
     word = random.choice(words)
     return word.upper()
 
-
+# Start the game
 def play(word):
     # Define variables
     word_to_be_discovered = "_" * len(word)  # _ _ _ _ _
@@ -17,8 +17,6 @@ def play(word):
     words_used = []
     attempts = 6
 
-    print(word)
-
     # Welcome player
     print("Let's play!")
     print(display_hangman(attempts))
@@ -26,8 +24,9 @@ def play(word):
 
     # While the player don't discover the word and still has future attempts
     while not guessed and attempts > 0:
-        attempt = input("Type a word or letter to continue: ").upper()
         
+        attempt = input("Type a word or letter to continue: ").upper()
+
         print(attempt)
 
         # ATTEMPT OF USE ONE LETTER ONLY
@@ -36,10 +35,11 @@ def play(word):
             # verify if the letter was already used
             if attempt in letter_used:
                 print("You already used this letter before: %s" % attempt)
+            
             # verify if the letter it is not in the word
-            elif attempt not in letter_used:
+            elif attempt not in word:
                 print("The letter %s is not in the word" % attempt)
-                attempts = - 1
+                attempts -= 1
                 words_used.append(attempt)
 
         # Invalid attempt
