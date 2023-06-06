@@ -58,6 +58,24 @@ def play(word):
 
                 if "_" not in word_to_be_discovered:
                     guessed = True
+        
+        # FULL WORD ATTEMPT
+        # When the user attempt to predict the fully word
+        elif len(attempt) == len(word) and attempt.isalpha():
+            
+            # Word already used
+            if attempt in words_used:
+                print("You already used this word %s." % attempt)
+            # Word is incorrect
+            elif attempt != word:
+                print("The word %s is incorrect!" % attempt)
+                attempts -= 1
+                words_used.append(attempt)
+            # Correct word
+            else:
+                guessed = True
+                word_to_be_discovered = word
+        
         # Invalid attempt
         else:
             print("Invalid attempt. Try again!")
