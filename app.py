@@ -46,6 +46,17 @@ def play(word):
                 letter_used.append(attempt)
                 # Transform the word in a list
                 word_list = list(word_to_be_discovered)
+
+                print(word_to_be_discovered)
+
+                # Verification where the letter is located in the word
+                indexes = [i for i, letter in enumerate(word) if letter == attempt]
+                for index in indexes:
+                    word_list[index] = attempt
+
+                word_to_be_discovered = "".join(word_list)
+
+                print(word_to_be_discovered)
         # Invalid attempt
         else:
             print("Invalid attempt. Try again!")
