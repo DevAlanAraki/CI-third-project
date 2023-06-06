@@ -24,7 +24,8 @@ def play(word):
 
     # While the player don't discover the word and still has future attempts
     while not guessed and attempts > 0:
-        attempts = input("Type a word or letter to continue: ").upper()
+        attempt = input("Type a word or letter to continue: ").upper()
+        aprint(attempt)
 
 # Game status (body)
 
