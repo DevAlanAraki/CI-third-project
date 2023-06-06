@@ -16,6 +16,8 @@ def play(word):
     letter_used = []
     words_used = []
     attempts = 6
+    
+    print(word)
 
     # Welcome player
     print("Let's play!")
@@ -65,7 +67,7 @@ def play(word):
     
     # End the game if the player discovered the word or if the attempts is 0
     if guessed:
-        print("Congratulations! You discovered the word")
+        print("Congratulations! You discovered the word.")
     else:
         print("You have no more attempts to guess the word. The word was: %s" % word)
 
