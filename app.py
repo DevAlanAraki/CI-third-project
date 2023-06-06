@@ -41,7 +41,11 @@ def play(word):
                 print("The letter %s is not in the word" % attempt)
                 attempts -= 1
                 words_used.append(attempt)
-
+            else:
+                print("You did it! The letter %s it is in the word" % attempt)
+                letter_used.append(attempt)
+                # Transform the word in a list
+                word_list = list(word_to_be_discovered)
         # Invalid attempt
         else:
             print("Invalid attempt. Try again!")
