@@ -1,0 +1,22 @@
+words = [
+    'Elephant',
+    'Sunshine',
+    'Guitar',
+    'Bubble',
+    'Rainbow',
+    'Chocolate',
+    'Whisper',
+    'Mountain',
+    'Zebra',
+    'Laughter',
+    'Velvet',
+    'Galaxy',
+    'Tangerine',
+    'Serenade',
+    'Meadow',
+    'Moonlight',
+    'Radiant',
+    'Waterfall',
+    'Wanderlust',
+    'Serendipity'
+]
