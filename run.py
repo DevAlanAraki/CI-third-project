@@ -9,6 +9,8 @@ def select_word():
     return word.upper()
 
 # Start the game
+
+
 def play(word):
     # Define variables
     word_to_be_discovered = "_" * len(word)  # _ _ _ _ _
@@ -24,7 +26,7 @@ def play(word):
 
     # While the player don't discover the word and still has future attempts
     while not guessed and attempts > 0:
-        
+
         attempt = input("Type a word or letter to continue: ").upper()
 
         print(attempt)
@@ -35,7 +37,7 @@ def play(word):
             # verify if the letter was already used
             if attempt in letter_used:
                 print("You already used this letter before: %s" % attempt)
-            
+
             # verify if the letter it is not in the word
             elif attempt not in word:
                 print("The letter %s is not in the word" % attempt)
@@ -56,11 +58,11 @@ def play(word):
 
                 if "_" not in word_to_be_discovered:
                     guessed = True
-        
+
         # FULL WORD ATTEMPT
         # When the user attempt to predict the fully word
         elif len(attempt) == len(word) and attempt.isalpha():
-            
+
             # Word already used
             if attempt in words_used:
                 print("You already used this word %s." % attempt)
@@ -73,14 +75,14 @@ def play(word):
             else:
                 guessed = True
                 word_to_be_discovered = word
-        
+
         # Invalid attempt
         else:
             print("Invalid attempt. Try again!")
         # Display the game status
         print(display_hangman(attempts))
         print(word_to_be_discovered)
-    
+
     # End the game if the player discovered the word or if the attempts is 0
     if guessed:
         print("Congratulations! You discovered the word.")
@@ -108,7 +110,7 @@ def display_hangman(attempts):
                   |      O
                   |     \\|/
                   |      |
-                  |     / 
+                  |     /
                   -
               """,
         # Remain 2 attempts
@@ -118,7 +120,7 @@ def display_hangman(attempts):
                   |      O
                   |     \\|/
                   |      |
-                  |      
+                  |
                   -
               """,
         # Remain 3 attempts
@@ -128,7 +130,7 @@ def display_hangman(attempts):
                   |      O
                   |     \\|
                   |      |
-                  |     
+                  |
                   -
               """,
         # Remain 4 attempts
@@ -138,7 +140,7 @@ def display_hangman(attempts):
                   |      O
                   |      |
                   |      |
-                  |     
+                  |
                   -
               """,
         # Remain 5 attempts
@@ -146,19 +148,19 @@ def display_hangman(attempts):
                   --------
                   |      |
                   |      O
-                  |    
-                  |      
-                  |     
+                  |
+                  |
+                  |
                   -
               """,
         # First attempt
         """
                   --------
                   |      |
-                  |      
-                  |    
-                  |      
-                  |     
+                  |
+                  |
+                  |
+                  |
                   -
               """
     ]
@@ -175,5 +177,6 @@ def start():
     while input("Would like to play again? (S/N)").upper() == 'Sf':
         word = select_word()
         play(word)
+
 
 start()
