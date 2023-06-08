@@ -174,7 +174,7 @@ def start():
     word = select_word()
     play(word)
     # WHen the game ends, check if the user would like to play a new game
-    while input("Would like to play again? (S/N)").upper() == 'Sf':
+    while input("Would like to play again? (Y/N)").upper() == 'Y':
         word = select_word()
         play(word)
 
