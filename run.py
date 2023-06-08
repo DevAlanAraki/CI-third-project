@@ -16,8 +16,6 @@ def play(word):
     letter_used = []
     words_used = []
     attempts = 6
-    
-    print(word)
 
     # Welcome player
     print("Let's play!")
