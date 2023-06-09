@@ -13,7 +13,7 @@ def select_word():
 
 def play(word):
     # Define variables
-    word_to_be_discovered = "_" * len(word)  # _ _ _ _ _
+    word_to_be_discovered = "_ " * len(word)  # _ _ _ _ _
     guessed = False
     letter_used = []
     words_used = []
