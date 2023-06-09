@@ -13,13 +13,14 @@ def select_word():
 
 def play(word):
     # Define variables
-    word_to_be_discovered = "_ " * len(word)  # _ _ _ _ _
+    word_to_be_discovered = " ".join(["_"] * len(word))  # _ _ _ _ _
     guessed = False
     letter_used = []
     words_used = []
     attempts = 6
 
     # Welcome player
+    print(word)
     print("Let's play!")
     print(display_hangman(attempts))
     print("This is the word: %s" % word_to_be_discovered)
@@ -47,14 +48,15 @@ def play(word):
                 print("You did it! The letter %s it is in the word" % attempt)
                 letter_used.append(attempt)
                 # Transform the word in a list
-                word_list = list(word_to_be_discovered)
+                word_list = list(word_to_be_discovered.split())
 
                 # Verification where the letter is located in the word
-                indexes = [i for i, letter in enumerate(word) if letter == attempt]
+                indexes = [i for i, letter in enumerate(
+                    word) if letter == attempt]
                 for index in indexes:
                     word_list[index] = attempt
 
-                word_to_be_discovered = "".join(word_list)
+                word_to_be_discovered = " ".join(word_list)
 
                 if "_" not in word_to_be_discovered:
                     guessed = True
