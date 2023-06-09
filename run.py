@@ -20,7 +20,6 @@ def play(word):
     attempts = 6
 
     # Welcome player
-    print(word)
     print("Let's play!")
     print(display_hangman(attempts))
     print("This is the word: %s" % word_to_be_discovered)
